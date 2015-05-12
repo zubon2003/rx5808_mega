@@ -404,7 +404,30 @@ void bandmonitor()
                RAW_RSSI[i] = map(RAW_RSSI[i],MIN_RSSI,MAX_RSSI,0,100);
                monitorUpdateGraph(i,RAW_RSSI[i]);
                if (i == 31) i = 0;
-               else i++;            
+               else i++;
+   
+   
+   //         //スキャンしたRSSIからLEDを光らせる
+//        for(int i=0;i<32;i++) led[getChannel(sortedChannelFreqTable[i])] = RAW_RSSI[i];
+//        for(int i=0;i<32;i++) pixels.setPixelColor(i, pixels.Color(led[i],0,0));
+//        pixels.show();
+
+        for(int i=0;i<32;i++) pixels.setPixelColor(i, pixels.Color(RAW_RSSI[i],0,0));
+        if (RAW_RSSI[0] > RSSI_THRESHOLD)
+           {
+            pixels.setPixelColor(27, pixels.Color(50,50,0));
+            pixels.setPixelColor(28, pixels.Color(50,50,0));
+           }
+        if (RAW_RSSI[1] > RSSI_THRESHOLD) pixels.setPixelColor(29, pixels.Color(50,50,0));
+        if (RAW_RSSI[2] > RSSI_THRESHOLD) pixels.setPixelColor(30, pixels.Color(50,50,0));
+        if (RAW_RSSI[3] > RSSI_THRESHOLD) pixels.setPixelColor(31, pixels.Color(50,50,0));
+        
+        if (RAW_RSSI[31] > RSSI_THRESHOLD) pixels.setPixelColor(3, pixels.Color(50,50,0));
+        if (RAW_RSSI[30] > RSSI_THRESHOLD) pixels.setPixelColor(2, pixels.Color(50,50,0));
+        if (RAW_RSSI[29] > RSSI_THRESHOLD) pixels.setPixelColor(1, pixels.Color(50,50,0));
+        if (RAW_RSSI[28] > RSSI_THRESHOLD) pixels.setPixelColor(0, pixels.Color(50,50,0));
+        if (RAW_RSSI[27] > RSSI_THRESHOLD) pixels.setPixelColor(0, pixels.Color(50,50,0));
+        pixels.show();               
     }
 }
 
@@ -527,12 +550,28 @@ void autotune()
 //               }
 //           }
            
-         //スキャンしたRSSIからLEDを光らせる
-        for(int i=0;i<32;i++) led[getChannel(sortedChannelFreqTable[i])] = RAW_RSSI[i];
-        for(int i=0;i<32;i++) pixels.setPixelColor(i, pixels.Color(led[i],0,0));
-        pixels.show();
-  
- }
+//         //スキャンしたRSSIからLEDを光らせる
+//        for(int i=0;i<32;i++) led[getChannel(sortedChannelFreqTable[i])] = RAW_RSSI[i];
+//        for(int i=0;i<32;i++) pixels.setPixelColor(i, pixels.Color(led[i],0,0));
+//        pixels.show();
+
+        for(int i=0;i<32;i++) pixels.setPixelColor(i, pixels.Color(RAW_RSSI[i],0,0));
+        if (RAW_RSSI[0] > RSSI_THRESHOLD)
+           {
+            pixels.setPixelColor(27, pixels.Color(50,50,0));
+            pixels.setPixelColor(28, pixels.Color(50,50,0));
+           }
+        if (RAW_RSSI[1] > RSSI_THRESHOLD) pixels.setPixelColor(29, pixels.Color(50,50,0));
+        if (RAW_RSSI[2] > RSSI_THRESHOLD) pixels.setPixelColor(30, pixels.Color(50,50,0));
+        if (RAW_RSSI[3] > RSSI_THRESHOLD) pixels.setPixelColor(31, pixels.Color(50,50,0));
+        
+        if (RAW_RSSI[31] > RSSI_THRESHOLD) pixels.setPixelColor(3, pixels.Color(50,50,0));
+        if (RAW_RSSI[30] > RSSI_THRESHOLD) pixels.setPixelColor(2, pixels.Color(50,50,0));
+        if (RAW_RSSI[29] > RSSI_THRESHOLD) pixels.setPixelColor(1, pixels.Color(50,50,0));
+        if (RAW_RSSI[28] > RSSI_THRESHOLD) pixels.setPixelColor(0, pixels.Color(50,50,0));
+        if (RAW_RSSI[27] > RSSI_THRESHOLD) pixels.setPixelColor(0, pixels.Color(50,50,0));
+        pixels.show();   
+      }
 }
 uint8_t getMaxRssi()
 {

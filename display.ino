@@ -172,6 +172,10 @@ void initMenuDisplay()
   myGLCD.print("     AUTOTUNE     ",CENTER,16*7+1);
   myGLCD.print("    RSSI  VIEW    ",CENTER,16*11+1);
   myGLCD.print("       SETUP      ",CENTER,16*15+1);
+  myGLCD.setFont(SmallFont);
+  myGLCD.setColor(255,255,255);
+  myGLCD.setBackColor(0 , 0, 0);
+  myGLCD.print(VERSION,0,308);
 }
 uint8_t upButtonPushed()
 {

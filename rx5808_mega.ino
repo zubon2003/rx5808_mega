@@ -13,6 +13,8 @@ extern uint8_t SmallFont[];
 UTFT myGLCD(HX8357C,38,39,40,41);
 
 
+String VERSION = "Ver. 0.81";
+
 //PIN Assign
 #define spiDataPin     66 //A12 RX5808のCH1に1kΩの抵抗つけて接続
 #define spiClockPin    68 //A14 RX5808のCH3に1kΩの抵抗つけて接続
