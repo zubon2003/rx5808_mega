@@ -13,7 +13,7 @@ extern uint8_t SmallFont[];
 UTFT myGLCD(CTE32HR,38,39,40,41);
 
 
-String VERSION = "Ver. 0.90";
+String VERSION = "Ver. 0.91";
 
 //PIN Assign
 #define spiDataPin     66 //A12 RX5808のCH1に1kΩの抵抗つけて接続

@@ -164,13 +164,13 @@ void rssisetup()
           switch(y)
            {
              case 1:
-               if (rssimax == 200) rssimax = 300;
+               if (rssimax == 200) rssimax = 400;
                else rssimax--;
                myGLCD.printNumI(rssimax,16*22,16*8);
                delay(50);
                break;
              case 2:
-               if (rssimin == 50) rssimin = 150;
+               if (rssimin == 50) rssimin = 175;
                else rssimin--;
                
                if (rssimin > 99) myGLCD.printNumI(rssimin,16*22,16*10);
@@ -208,13 +208,13 @@ void rssisetup()
            switch(y)
            {
              case 1:
-               if (rssimax == 300) rssimax = 200;
+               if (rssimax == 400) rssimax = 200;
                else rssimax++;
                myGLCD.printNumI(rssimax,16*22,16*8);
                delay(50);
                break;
              case 2:
-               if (rssimin == 150) rssimin = 50;
+               if (rssimin == 175) rssimin = 50;
                else rssimin++;
                
                if (rssimin > 99) myGLCD.printNumI(rssimin,16*22,16*10);
